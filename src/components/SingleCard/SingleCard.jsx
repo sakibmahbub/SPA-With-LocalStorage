@@ -1,7 +1,6 @@
 import React from "react";
 
-const SingleCard = ({ movie }) => {
-  console.log(movie);
+const SingleCard = ({ movie, handleWatchTime }) => {
   return (
     <div className="movie-card card w-72">
       <div className="movie-poster w-1/2 mx-auto">
@@ -14,7 +13,12 @@ const SingleCard = ({ movie }) => {
           <p>Watch time : {movie.watchTime}</p>
           <p>Rating : {movie.imdbRating}</p>
         </div>
-        <button className="btn btn-primary w-full text-center">Book Now</button>
+        <button
+          onClick={() => handleWatchTime(movie.watchTime)}
+          className="btn btn-primary w-full text-center"
+        >
+          Book Now
+        </button>
       </div>
     </div>
   );
