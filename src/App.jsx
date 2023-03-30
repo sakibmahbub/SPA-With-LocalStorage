@@ -5,7 +5,13 @@ import SideCart from "./components/SideCart/SideCart";
 
 const App = () => {
   const handleWatchTime = (time) => {
-    console.log(time);
+    const previousWatchTime = JSON.parse(localStorage.getItem("watchTime"));
+    if (previousWatchTime) {
+      const sum = previousWatchTime + time;
+      localStorage.setItem("watchTime", sum);
+    } else {
+      localStorage.setItem("watchTime", time);
+    }
   };
   return (
     <div>
