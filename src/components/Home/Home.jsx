@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from "react";
 
 const Home = () => {
+  const [movies, setMovies] = useState([]);
+  useEffect(() => {
+    fetch("data.json")
+      .then((res) => res.json())
+      .then((data) => setMovies(data));
+  }, []);
+
   return (
     <div>
       <div className="movie-container">
