@@ -2,7 +2,7 @@ import React from "react";
 
 const SingleCard = ({ movie, handleWatchTime }) => {
   return (
-    <div className="movie-card card w-72">
+    <div className="movie-card card w-96 border-2 border-zinc-400 rounded-lg">
       <div className="movie-poster w-1/2 mx-auto">
         <img className="w-full" src={movie.poster} alt="" />
       </div>
